@@ -1,0 +1,220 @@
+                /* Global Styles */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Cairo', sans-serif;
+                }
+        
+                body {
+                    background: linear-gradient(45deg, #000212, #001233);
+                    color: #fff;
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-top: 80px; /* To accommodate fixed header */
+                }
+        
+                /* Page Content Styles */
+                h1 {
+                    font-family: 'Baloo 2', cursive;
+                    font-size: 3rem;
+                    margin-bottom: 40px;
+                    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+                }
+        
+                .game-container {
+                    display: flex;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+        
+                .game-button {
+                    width: 200px;
+                    height: 200px;
+                    background-color: #333;
+                    border: none;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .game-button:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 20px #00ffff;
+                }
+        
+                .game-button svg {
+                    width: 100%;
+                    height: 100%;
+                    fill: #00ffff;
+                    transition: fill 0.3s ease;
+                }
+        
+                .game-button:hover svg {
+                    fill: #ffffff;
+                }
+        
+                .game-title {
+                    position: absolute;
+                    bottom: 10px;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    background: rgb(255, 255, 255);
+                    padding: 5px 0;
+                }
+        
+                #game-frame {
+                    width: 80%;
+                    height: 600px;
+                    margin-top: 50px;
+                    border: 2px solid #00ffff;
+                    border-radius: 15px;
+                    display: none;
+                    box-shadow: 0 0 20px #00ffff;
+                    position: relative;
+                }
+        
+                /* Fullscreen Button Styles */
+                .fullscreen-button {
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background: linear-gradient(45deg, #00ffff, #00ff9d);
+                    color: #000;
+                    border: none;
+                    border-radius: 30px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .fullscreen-button:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+                }
+        
+                .fullscreen-icon {
+                    width: 20px;
+                    height: 20px;
+                    fill: #000;
+                    transition: fill 0.3s ease;
+                }
+        
+                .fullscreen-button:hover .fullscreen-icon {
+                    fill: #00ffff;
+                }
+        
+                /* Sign In Up Styles */
+                .sign-in-up {
+                    max-width: 500px;
+                    margin: 100px auto;
+                    padding: 20px;
+                    background: rgba(255, 255, 255, 0.05);
+                    border-radius: 20px;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(0, 255, 255, 0.1);
+                    text-align: center;
+                }
+        
+                .sign-in-up h2 {
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                    color: #00ffff;
+                    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+                }
+        
+                .tabs {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+        
+                .tabs button {
+                    padding: 10px 20px;
+                    background: none;
+                    border: none;
+                    color: #00ffff;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    border-bottom: 2px solid transparent;
+                }
+        
+                .tabs button.active {
+                    border-color: #00ffff;
+                }
+        
+                .form-container {
+                    display: none;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+        
+                .form-container.active {
+                    display: flex;
+                }
+        
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+        
+                form h3 {
+                    font-size: 1.5rem;
+                    color: #00ffff;
+                    margin-bottom: 10px;
+                }
+        
+                form input {
+                    padding: 12px;
+                    border-radius: 8px;
+                    border: 1px solid rgba(0, 255, 255, 0.3);
+                    background: rgba(0, 0, 0, 0.3);
+                    color: #fff;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+                }
+        
+                form input:focus {
+                    outline: none;
+                    border-color: #00ffff;
+                    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+                }
+        
+                form button {
+                    padding: 15px 30px;
+                    background: linear-gradient(45deg, #00ffff, #00ff9d);
+                    color: #000;
+                    border: none;
+                    border-radius: 30px;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+        
+                form button:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+                }
+        
+                #message {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    background: rgba(255, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 0, 0, 0.3);
+                    border-radius: 8px;
+                    color: #ff0000;
+                    display: none;
+                }

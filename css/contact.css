@@ -1,0 +1,308 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #000212, #001233);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px; /* Reduced padding for smaller screens */
+}
+
+/* Page Content Styles */
+h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem; /* Smaller font size for mobile */
+  margin-bottom: 20px; /* Reduced margin for smaller screens */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.game-container {
+  display: flex;
+  gap: 20px; /* Reduced gap for smaller screens */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-button {
+  width: 150px; /* Smaller button size for mobile */
+  height: 150px; /* Smaller button size for mobile */
+  background-color: #333;
+  border: none;
+  border-radius: 15px; /* Reduced border radius for smaller screens */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff; /* Reduced shadow for smaller screens */
+}
+
+.game-button svg {
+  width: 100%;
+  height: 100%;
+  fill: #00ffff;
+  transition: fill 0.3s ease;
+}
+
+.game-button:hover svg {
+  fill: #ffffff;
+}
+
+.game-title {
+  position: absolute;
+  bottom: 8px; /* Adjusted position for smaller screens */
+  width: 100%;
+  text-align: center;
+  font-size: 1rem; /* Smaller font size for mobile */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  padding: 5px 0;
+}
+
+#game-frame {
+  width: 90%; /* Full width for smaller screens */
+  height: 400px; /* Reduced height for smaller screens */
+  margin-top: 30px; /* Reduced margin for smaller screens */
+  border: 2px solid #00ffff;
+  border-radius: 10px; /* Reduced border radius for smaller screens */
+  display: none;
+  box-shadow: 0 0 15px #00ffff; /* Reduced shadow for smaller screens */
+  position: relative;
+}
+
+/* Fullscreen Button Styles */
+.fullscreen-button {
+  margin-top: 10px;
+  padding: 8px 16px; /* Reduced padding for smaller screens */
+  background: linear-gradient(45deg, #00ffff, #00ff9d);
+  color: #000;
+  border: none;
+  border-radius: 20px; /* Reduced border radius for smaller screens */
+  font-size: 0.9rem; /* Smaller font size for mobile */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap for smaller screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fullscreen-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4); /* Reduced shadow for smaller screens */
+}
+
+.fullscreen-icon {
+  width: 16px; /* Smaller icon size for mobile */
+  height: 16px; /* Smaller icon size for mobile */
+  fill: #000;
+  transition: fill 0.3s ease;
+}
+
+.fullscreen-button:hover .fullscreen-icon {
+  fill: #00ffff;
+}
+
+/* Sign In Up Styles */
+.sign-in-up {
+  max-width: 90%; /* Full width for smaller screens */
+  margin: 50px auto; /* Reduced margin for smaller screens */
+  padding: 15px; /* Reduced padding for smaller screens */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px; /* Reduced border radius for smaller screens */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sign-in-up h2 {
+  font-size: 1.8rem; /* Smaller font size for mobile */
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* Reduced shadow for smaller screens */
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+}
+
+.tabs button {
+  padding: 8px 16px; /* Reduced padding for smaller screens */
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1rem; /* Smaller font size for mobile */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs button.active {
+  border-color: #00ffff;
+}
+
+.form-container {
+  display: none;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap for smaller screens */
+}
+
+.form-container.active {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced gap for smaller screens */
+}
+
+form h3 {
+  font-size: 1.3rem; /* Smaller font size for mobile */
+  color: #00ffff;
+  margin-bottom: 8px; /* Reduced margin for smaller screens */
+}
+
+form input {
+  padding: 10px; /* Reduced padding for smaller screens */
+  border-radius: 6px; /* Reduced border radius for smaller screens */
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 0.95rem; /* Smaller font size for mobile */
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Reduced shadow for smaller screens */
+}
+
+form button {
+  padding: 12px 25px; /* Reduced padding for smaller screens */
+  background: linear-gradient(45deg, #00ffff, #00ff9d);
+  color: #000;
+  border: none;
+  border-radius: 20px; /* Reduced border radius for smaller screens */
+  font-size: 1rem; /* Smaller font size for mobile */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4); /* Reduced shadow for smaller screens */
+}
+
+#message {
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  padding: 8px; /* Reduced padding for smaller screens */
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 6px; /* Reduced border radius for smaller screens */
+  color: #ff0000;
+  display: none;
+}
+
+/* Media Queries for Tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.8rem; /* Adjusted font size for tablets */
+  }
+
+  .game-button {
+    width: 180px; /* Adjusted button size for tablets */
+    height: 180px; /* Adjusted button size for tablets */
+  }
+
+  .game-title {
+    font-size: 1.1rem; /* Adjusted font size for tablets */
+  }
+
+  #game-frame {
+    height: 500px; /* Adjusted height for tablets */
+  }
+
+  .sign-in-up {
+    max-width: 80%; /* Adjusted width for tablets */
+  }
+
+  .sign-in-up h2 {
+    font-size: 2rem; /* Adjusted font size for tablets */
+  }
+
+  .tabs button {
+    font-size: 1.1rem; /* Adjusted font size for tablets */
+  }
+
+  form h3 {
+    font-size: 1.4rem; /* Adjusted font size for tablets */
+  }
+
+  form input {
+    padding: 12px; /* Adjusted padding for tablets */
+  }
+
+  form button {
+    padding: 14px 28px; /* Adjusted padding for tablets */
+  }
+}
+
+/* Media Queries for Phones */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Smaller font size for phones */
+  }
+
+  .game-button {
+    width: 120px; /* Smaller button size for phones */
+    height: 120px; /* Smaller button size for phones */
+  }
+
+  .game-title {
+    font-size: 0.9rem; /* Smaller font size for phones */
+  }
+
+  #game-frame {
+    height: 300px; /* Smaller height for phones */
+  }
+
+  .sign-in-up {
+    max-width: 90%; /* Full width for phones */
+  }
+
+  .sign-in-up h2 {
+    font-size: 1.6rem; /* Smaller font size for phones */
+  }
+
+  .tabs button {
+    font-size: 0.95rem; /* Smaller font size for phones */
+  }
+
+  form h3 {
+    font-size: 1.2rem; /* Smaller font size for phones */
+  }
+
+  form input {
+    padding: 10px; /* Smaller padding for phones */
+  }
+
+  form button {
+    padding: 12px 25px; /* Smaller padding for phones */
+  }
+}

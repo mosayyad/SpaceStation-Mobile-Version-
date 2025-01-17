@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #000212, #001233);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px; /* Reduced padding for smaller screens */
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav .logo {
+  color: #00ffff;
+  font-size: 1.3rem; /* Smaller font size for mobile */
+  text-decoration: none;
+}
+
+.nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px; /* Reduced margin for smaller screens */
+  transition: color 0.3s ease;
+}
+
+.nav .nav-links a:hover {
+  color: #00ffff;
+}
+
+.sign-in-up {
+  max-width: 90%; /* Full width for smaller screens */
+  margin: 50px auto; /* Reduced margin for smaller screens */
+  padding: 15px; /* Reduced padding for smaller screens */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px; /* Reduced border radius for smaller screens */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sign-in-up h2 {
+  font-size: 1.8rem; /* Smaller font size for mobile */
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* Reduced shadow for smaller screens */
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+}
+
+.tabs button {
+  padding: 8px 16px; /* Reduced padding for smaller screens */
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1rem; /* Smaller font size for mobile */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs button.active {
+  border-color: #00ffff;
+}
+
+.form-container {
+  display: none;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap for smaller screens */
+}
+
+.form-container.active {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced gap for smaller screens */
+}
+
+form h3 {
+  font-size: 1.3rem; /* Smaller font size for mobile */
+  color: #00ffff;
+  margin-bottom: 8px; /* Reduced margin for smaller screens */
+}
+
+form input {
+  padding: 10px; /* Reduced padding for smaller screens */
+  border-radius: 6px; /* Reduced border radius for smaller screens */
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 0.95rem; /* Smaller font size for mobile */
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Reduced shadow for smaller screens */
+}
+
+form button {
+  padding: 12px 25px; /* Reduced padding for smaller screens */
+  background: linear-gradient(45deg, #00ffff, #00ff9d);
+  color: #000;
+  border: none;
+  border-radius: 25px; /* Reduced border radius for smaller screens */
+  font-size: 1rem; /* Smaller font size for mobile */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4); /* Reduced shadow for smaller screens */
+}
+
+#message {
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  padding: 8px; /* Reduced padding for smaller screens */
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 6px; /* Reduced border radius for smaller screens */
+  color: #ff0000;
+  display: none;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.97);
+  color: white;
+  padding: 30px 15px; /* Reduced padding for smaller screens */
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for smaller screens */
+  gap: 20px; /* Reduced gap for smaller screens */
+}
+
+.footer-section {
+  text-align: right;
+}
+
+.footer-section h3 {
+  color: #00ffff;
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  font-size: 1.1rem; /* Smaller font size for mobile */
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px; /* Reduced margin for smaller screens */
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem; /* Smaller font size for mobile */
+}
+
+.footer-section ul li a:hover {
+  color: #00ffff;
+  padding-right: 8px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px; /* Reduced gap for smaller screens */
+  justify-content: center;
+  margin-top: 15px; /* Reduced margin for smaller screens */
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.4rem; /* Smaller font size for mobile */
+  transition: all 0.3s ease;
+  padding: 6px; /* Reduced padding for smaller screens */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.social-links a:hover {
+  color: #00ffff;
+  transform: translateY(-3px);
+  background: rgba(0, 255, 255, 0.15);
+}
+
+.footer-bottom {
+  margin-top: 30px; /* Reduced margin for smaller screens */
+  padding-top: 15px; /* Reduced padding for smaller screens */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem; /* Smaller font size for mobile */
+}
+
+/* Media Queries for Tablets */
+@media (max-width: 1024px) {
+  .sign-in-up {
+    max-width: 80%; /* Adjusted width for tablets */
+  }
+
+  .sign-in-up h2 {
+    font-size: 2rem; /* Adjusted font size for tablets */
+  }
+
+  .tabs button {
+    font-size: 1.1rem; /* Adjusted font size for tablets */
+  }
+
+  form h3 {
+    font-size: 1.4rem; /* Adjusted font size for tablets */
+  }
+
+  form input {
+    padding: 12px; /* Adjusted padding for tablets */
+  }
+
+  form button {
+    padding: 14px 28px; /* Adjusted padding for tablets */
+  }
+
+  .footer-content {
+    gap: 30px; /* Adjusted gap for tablets */
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem; /* Adjusted font size for tablets */
+  }
+
+  .footer-section ul li a {
+    font-size: 0.95rem; /* Adjusted font size for tablets */
+  }
+}
+
+/* Media Queries for Phones */
+@media (max-width: 768px) {
+  .nav .nav-links {
+    display: none; /* Hide nav links on mobile */
+  }
+
+  .sign-in-up {
+    max-width: 90%; /* Full width for phones */
+  }
+
+  .sign-in-up h2 {
+    font-size: 1.6rem; /* Smaller font size for phones */
+  }
+
+  .tabs button {
+    font-size: 0.95rem; /* Smaller font size for phones */
+  }
+
+  form h3 {
+    font-size: 1.2rem; /* Smaller font size for phones */
+  }
+
+  form input {
+    padding: 10px; /* Smaller padding for phones */
+  }
+
+  form button {
+    padding: 12px 25px; /* Smaller padding for phones */
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* Single column layout for phones */
+    gap: 20px; /* Smaller gap for phones */
+  }
+
+  .footer-section {
+    text-align: center; /* Center-align footer content for phones */
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem; /* Smaller font size for phones */
+  }
+
+  .footer-section ul li a {
+    font-size: 0.85rem; /* Smaller font size for phones */
+  }
+}
