@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Setting the character encoding to UTF-8 and enabling responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title that appears in the browser tab -->
+    <title>Galaxy Youth AI</title>
+    
+    <link rel="icon" href="">
+
+    <!-- Link to external CSS stylesheet for the page -->
+    <link rel="stylesheet" href="css/chatbot_ai.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <!-- Import map for using Google Generative AI -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+</head>
+<body>
+    
+  <div class="stars"></div>
+
+  <header class="header">
+    <nav class="nav">
+        <a href="index.html" class="logo">🚀Space Station</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu" id="menu">
+            <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+            <a href="games.html">Game</a>
+            <a href="chatbot_ai.html"  id="active-page">GY-AI</a>
+            <a href="commuinty.html">Community</a>
+            <a href="contact.html">Contact</a>
+            <a href="topics.html">Topics</a>
+            <a href="about.html">About</a>
+            <a href="vr_beta.html">VR (Beta Version)</a>
+            <a href="Sign_in_up.html">Dashboard</a>
+        </div>
+    </nav>
+</header>
+  
+  <main class="chat-container">
+    <div class="space-facts" id="spaceFacts"></div>
+    <div id="chatMessages"></div>
+    <div id="typingIndicator">Typing...</div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your question here...">
+      <button id="sendButton">Send</button>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About the Site</a></li>
+          <li><a href="nasa-eye-exoplanets.html">NASA Eye Exoplanets</a></li>
+          <li><a href="games.html">Play Now</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: info@spacestation.com</li>
+          <li>Phone: +966 123 456 789</li>
+          <li>Address: Egypt, Monufia Governorate</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>All Rights Reserved © 2024 Galaxy Youth</p>
+    </div>
+  </footer>
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+  
+    // Create animated stars background
+    function createStars() {
+      const starsContainer = document.querySelector('.stars');
+      const numberOfStars = 200;
+      
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 2;
+        
+        // Random duration
+        const duration = 2 + Math.random() * 3;
+        
+        star.style.cssText = `
+          left: ${x}%;
+          top: ${y}%;
+          width: ${size}px;
+          height: ${size}px;
+          --duration: ${duration}s;
+        `;
+        
+        starsContainer.appendChild(star);
+      }
+    }
+  
+    createStars();
+  
+    const genAI = new GoogleGenerativeAI('AIzaSyAAz3dvPFaZ4_BVAcjEbLf2cWCTrfAzviQ');
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  
+    const spaceFacts = [
+      "Did you know that the Sun contains 99.86% of the mass of the solar system?",
+      "Mars has the largest volcano in the solar system.",
+      "The Earth orbits the Sun at a speed of 107,000 kilometers per hour.",
+      "The Great Wall of China is visible from space.",
+      "It takes 8 minutes for light to travel from the Sun to Earth.",
+      "Saturn has 82 known moons.",
+      "The Milky Way contains more than 100 billion stars.",
+      "A year on Jupiter is equivalent to 12 Earth years."
+    ];
+  
+    let currentFactIndex = 0;
+  
+    function updateSpaceFact() {
+      const factElement = document.getElementById('spaceFacts');
+      factElement.style.opacity = '0';
+      
+      setTimeout(() => {
+        factElement.textContent = spaceFacts[currentFactIndex];
+        factElement.style.opacity = '1';
+        currentFactIndex = (currentFactIndex + 1) % spaceFacts.length;
+      }, 500);
+    }
+  
+    updateSpaceFact();
+    setInterval(updateSpaceFact, 5000);
+  
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const message = input.value.trim();
+      
+      if (message) {
+        addMessage(message, 'user-message');
+        input.value = '';
+        
+        const typingIndicator = document.getElementById('typingIndicator');
+        typingIndicator.style.display = 'block';
+        
+        setTimeout(async () => {
+          typingIndicator.style.display = 'none';
+          try {
+            const result = await model.generateContent(message);
+            addMessage(result.response.text(), 'bot-message');
+          } catch (error) {
+            addMessage('Sorry, there was an error processing your request. Please try again.', 'bot-message');
+          }
+        }, 1000);
+      }
+    }
+  
+    function addMessage(text, className) {
+      const messagesDiv = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${className}`;
+      messageDiv.textContent = text;
+      messagesDiv.appendChild(messageDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+  
+    document.getElementById('userInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  
+    document.getElementById('sendButton').addEventListener('click', sendMessage);
+  
+    setTimeout(() => {
+      addMessage('Hello! I am your assistant to explore the world of space. How can I assist you today?', 'bot-message');
+    }, 1000);
+  </script>
+  <script src="js/navbar.js"></script>
+</body>
+</html>

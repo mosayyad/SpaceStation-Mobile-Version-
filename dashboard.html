@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="icon" href="">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, updateEmail, deleteUser } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDh2YIsoxIFgUbE1w29XiAk6bECNMLNclE",
+            authDomain: "space-station-54728.firebaseapp.com",
+            projectId: "space-station-54728",
+            storageBucket: "space-station-54728.firebasestorage.app",
+            messagingSenderId: "639272389808",
+            appId: "1:639272389808:web:b2c98f61e225739776ff75",
+            measurementId: "G-FP7TLPRL3G"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const showMessage = (message) => {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+        };
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById('user-email').textContent = user.email;
+                document.getElementById('user-name').textContent = user.displayName || 'User';
+            } else {
+                window.location.href = 'Sign_in_up.html';
+            }
+        });
+
+        document.getElementById('update-email-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newEmail = document.getElementById('new-email').value;
+            const user = auth.currentUser;
+
+            updateEmail(user, newEmail).then(() => {
+                showMessage('Email updated successfully!');
+            }).catch((error) => {
+                showMessage(error.message);
+            });
+        });
+
+        document.getElementById('delete-account').addEventListener('click', () => {
+            const user = auth.currentUser;
+
+            deleteUser(user).then(() => {
+                showMessage('Account deleted successfully!');
+                window.location.href = 'Sign_in_up.html';
+            }).catch((error) => {
+                showMessage(error.message);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">🚀Space Station</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu" id="menu">
+                <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+                <a href="games.html">Game</a>
+                <a href="chatbot_ai.html">GY-AI</a>
+                <a href="commuinty.html">Community</a>
+                <a href="contact.html">Contact</a>
+                <a href="topics.html">Topics</a>
+                <a href="about.html">About</a>
+                <a href="vr_beta.html">VR (Beta Version)</a>
+                <a href="dashboard.html" id="active-page">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>Dashboard</h1>
+            <p>Welcome to the dashboard</p>
+            <p>Name: <span id="user-name"></span></p>
+            <p>Email: <span id="user-email"></span></p>
+            <a href="Sign_in_up.html" class="btn">Logout</a>
+        </div>
+
+        <div class="form-container">
+            <form id="update-email-form">
+                <h3>Change Email</h3>
+                <input type="email" id="new-email" placeholder="New Email" required>
+                <button type="submit">Update Email</button>
+            </form>
+            <button id="delete-account" class="btn">Delete Account</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About the Site</a></li>
+              <li><a href="nasa-eye-exoplanets.html">NASA Eye Exoplanets</a></li>
+              <li><a href="games.html">Play Now</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="community.html">Community</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>Email: info@spacestation.com</li>
+              <li>Phone: +966 123 456 789</li>
+              <li>Address: Egypt, Monufia Governorate</li>
+            </ul>
+          </div>
+          
+        </div>
+        
+        <div class="footer-bottom">
+          <p>All Rights Reserved © 2024 Galaxy Youth</p>
+        </div>
+      </footer>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>

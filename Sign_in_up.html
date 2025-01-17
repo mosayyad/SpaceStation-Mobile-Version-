@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Up</title>
+    <link rel="stylesheet" href="css/Sign_in_up.css"> <!-- External CSS -->
+    <link rel="stylesheet" href="css/navbar.css"> <!-- External CSS -->
+    <link rel="icon" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">🚀Space Station</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu" id="menu">
+                <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+                <a href="games.html">Game</a>
+                <a href="chatbot_ai.html">GY-AI</a>
+                <a href="commuinty.html">Community</a>
+                <a href="contact.html">Contact</a>
+                <a href="topics.html">Topics</a>
+                <a href="about.html">About</a>
+                <a href="vr_beta.html">VR (Beta Version)</a>
+                <a href="Sign_in_up.html" id="active-page">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="sign-in-up">
+            <h2>Sign In / Sign Up</h2>
+            <div class="tabs">
+                <button class="tab-link active" data-tab="sign-in">Sign In</button>
+                <button class="tab-link" data-tab="sign-up">Sign Up</button>
+            </div>
+            <div id="message"></div> <!-- Error message will appear here -->
+            <div class="form-container active" id="sign-in">
+              <form id="sign-in-form">
+                <h3>Sign In</h3>
+                <input type="email" id="sign-in-email" placeholder="Email" required>
+                <input type="password" id="sign-in-password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+                <button type="button" id="google-sign-in">Sign In with Google</button>
+                <button type="button" id="github-sign-in">Sign In with GitHub</button>
+              </form>
+            </div>
+            <div class="form-container" id="sign-up">
+                <form id="sign-up-form">
+                    <h3>Sign Up</h3>
+                    <input type="email" id="sign-up-email" placeholder="Email" required>
+                    <input type="password" id="sign-up-password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About the Site</a></li>
+            <li><a href="nasa-eye-exoplanets.html">NASA Eye Exoplanets</a></li>
+            <li><a href="games.html">Play Now</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="community.html">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Email: info@spacestation.com</li>
+            <li>Phone: +966 123 456 789</li>
+            <li>Address: Egypt, Monufia Governorate</li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>All Rights Reserved © <span id="year"></span> Galaxy Youth</p>
+      </div>
+    </footer>
+  
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDh2YIsoxIFgUbE1w29XiAk6bECNMLNclE",
+  authDomain: "space-station-54728.firebaseapp.com",
+  projectId: "space-station-54728",
+  storageBucket: "space-station-54728.appspot.com",
+  messagingSenderId: "639272389808",
+  appId: "1:639272389808:web:b2c98f61e225739776ff75",
+  measurementId: "G-FP7TLPRL3G"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const showMessage = (message) => {
+  const messageDiv = document.getElementById('message');
+  messageDiv.textContent = message;
+  messageDiv.style.display = 'block';
+};
+
+const redirectToDashboard = () => {
+  window.location.href = 'dashboard.html';
+};
+
+document.getElementById('sign-in-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('sign-in-email').value;
+  const password = document.getElementById('sign-in-password').value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      showMessage('Signed in successfully!');
+      redirectToDashboard();
+    })
+    .catch((error) => {
+      showMessage(error.message);
+    });
+});
+
+document.getElementById('sign-up-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('sign-up-email').value;
+  const password = document.getElementById('sign-up-password').value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      showMessage('Signed up successfully!');
+      redirectToDashboard();
+    })
+    .catch((error) => {
+      showMessage(error.message);
+    });
+});
+
+document.getElementById('google-sign-in').addEventListener('click', () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      showMessage('Signed in with Google successfully!');
+      redirectToDashboard();
+    })
+    .catch((error) => {
+      showMessage(error.message);
+    });
+});
+
+document.querySelectorAll('.tab-link').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.form-container').forEach(form => form.classList.remove('active'));
+
+    button.classList.add('active');
+    document.getElementById(button.dataset.tab).classList.add('active');
+  });
+});
+document.getElementById('github-sign-in').addEventListener('click', () => {
+  const provider = new GithubAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      showMessage('Signed in with GitHub successfully!');
+      redirectToDashboard();
+    })
+    .catch((error) => {
+      showMessage(error.message);
+    });
+});
+    </script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/navbar.js"></script> <!-- External JavaScript -->
+</body>
+</html>
+  
+
+

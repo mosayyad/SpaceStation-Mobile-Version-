@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags to set up the character encoding and viewport for mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title: Corrected typo from "Exolpor" to "Explore" -->
+    <title>Explore Exoplanets</title>
+
+    <link rel="icon" href="">
+
+    <!-- Linking to external CSS for styling -->
+    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+        <a href="index.html" class="logo">🚀Space Station</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu" id="menu">
+            <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+            <a href="games.html">Game</a>
+            <a href="chatbot_ai.html">GY-AI</a>
+            <a href="commuinty.html" id="active-page">Community</a>
+            <a href="contact.html">Contact</a>
+            <a href="topics.html">Topics</a>
+            <a href="about.html">About</a>
+            <a href="vr_beta.html">VR (Beta Version)</a>
+            <a href="Sign_in_up.html" >Dashboard</a>
+        </div>
+    </nav>
+</header>
+
+  <div class="cosmic-particles" id="particles"></div>
+
+  <div class="frame-container">
+    <div class="frame-header">
+      <h1 class="frame-title">Explore the Community</h1>
+      <div class="frame-controls">
+        <button class="control-btn" id="refreshBtn">Refresh</button>
+        <button class="control-btn" id="fullscreenBtn">Fullscreen</button>
+      </div>
+    </div>
+  
+    <div class="frame-wrapper">
+      <iframe id="contentFrame" src="https://deadsimplechat.com/EKtCvLCFF" allowfullscreen></iframe>
+    </div>
+  
+    <div class="frame-footer">
+      <p>Explore new friends to connect with 🌟</p>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About the Site</a></li>
+          <li><a href="nasa-eye-exoplanets.html">NASA Eye Exoplanets</a></li>
+          <li><a href="games.html">Play Now</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: info@spacestation.com</li>
+          <li>Phone: +966 123 456 789</li>
+          <li>Address: Egypt, Monufia Governorate</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>All Rights Reserved © 2024 Galaxy Youth</p>
+    </div>
+  </footer>
+<!-- Loading external JavaScript for chat functionality (if needed) -->
+<script src="https://cdn.deadsimplechat.com/sdk/1.2.1/dschatsdk.min.js"></script>
+<script src="js/iframe.js"></script>
+<script src="js/navbar.js"></script>
+</body>
+</html>
