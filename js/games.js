@@ -15,13 +15,16 @@
                     const gameId = button.id;
                     let gameUrl = '';
                     if (gameId === 'game1') {
-                        gameUrl = 'Space_Advnture.html';
+                        gameUrl = 'Games/Space_Advnture.html';
                     } else if (gameId === 'game2') {
-                        gameUrl = 'Solar_System_Exoplorer.html';
+                        gameUrl = 'Games/Solar_System_Exoplorer.html';
                     }
                     else if (gameId === 'game3') {
-                    gameUrl = 'Orbit Annihilation.html';
+                    gameUrl = 'Games/Orbit Annihilation.html';
                     }
+                    else if (gameId === 'game4') {
+                        gameUrl = 'Games/3d_space_exoplorer.html';
+                        }
                     if (gameUrl) {
                         gameFrame.src = gameUrl;
                         gameFrame.style.display = 'block';
