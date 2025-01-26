@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Space Station</title>
   <link rel="icon" href="images/team_logo/Galaxy_Youth.png">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/navbar.css">
-
+  <link rel="stylesheet" href="css/index.css"> <!-- Link to CSS file -->
+  <link rel="stylesheet" href="css/navbar.css"> <!-- Link to CSS file -->
+  <link rel="stylesheet" href="css/live-bar.css"> <!-- Link to CSS file -->
 </head>
 <body>
   <div class="video-background">
@@ -18,26 +18,26 @@
   
   <header class="header">
     <nav class="nav">
-        <a href="index.html" class="logo" id="active-page">🚀Space Station</a>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu" id="menu">
-            <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
-            <a href="games.html">Game</a>
-            <a href="chatbot_ai.html">GY-AI</a>
-            <a href="commuinty.html">Community</a>
-            <a href="contact.html">Contact</a>
-            <a href="topics.html">Topics</a>
-            <a href="about.html">About</a>
-            <a href="vr_beta.html">VR (Beta Version)</a>
-            <a href="Sign_in_up.html" >Dashboard</a>
-        </div>
+      <a href="index.html" class="logo" id="active-page">🚀Space Station</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu" id="menu">
+        <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+        <a href="games.html">Game</a>
+        <a href="chatbot_ai.html">GY-AI</a>
+        <a href="commuinty.html">Community</a>
+        <a href="contact.html">Contact</a>
+        <a href="topics.html">Topics</a>
+        <a href="about.html">About</a>
+        <a href="vr_beta.html">VR (Beta Version)</a>
+        <a href="Sign_in_up.html">Dashboard</a>
+      </div>
     </nav>
-</header>
-  
+  </header>
+
   <section class="hero">
     <div class="hero-content">
       <h1>Discover the Secrets of the Universe</h1>
@@ -89,14 +89,56 @@
           <li>Address: Egypt, Monufia Governorate</li>
         </ul>
       </div>
-      
     </div>
     
     <div class="footer-bottom">
       <p>All Rights Reserved © 2024 Galaxy Youth</p>
     </div>
   </footer>
+
+  <!-- Live News Ticker at the Bottom -->
+  <nav id="news-navbar">
+    <div class="ticker-container">
+      <ul id="news-list">
+        <!-- News items will be dynamically inserted here -->
+      </ul>
+    </div>
+  </nav>
+
   <script src="js/index.js"></script>
   <script src="js/navbar.js"></script>
+  <script>
+    async function fetchNews() {
+      try {
+        const response = await fetch('/news'); // Fetch news from the server
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const articles = await response.json();
+        const newsList = document.getElementById('news-list');
+  
+        // Clear any existing news items
+        newsList.innerHTML = '';
+  
+        // Add each article to the ticker
+        articles.forEach(article => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = article.url;
+          a.target = '_blank';
+          a.textContent = article.title;
+          li.appendChild(a);
+          newsList.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '<li>Failed to load news. Please try again later.</li>';
+      }
+    }
+  
+    // Fetch news when the page loads
+    fetchNews();
+  </script>
 </body>
 </html>

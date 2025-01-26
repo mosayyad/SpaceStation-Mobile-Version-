@@ -1,0 +1,51 @@
+/* Live News Ticker Styles */
+#news-navbar {
+  background-color: black; /* Black background for navbar */
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed; /* Fixed position */
+  width: 100%;
+  bottom: 0; /* Position at the bottom */
+  left: 0;
+  z-index: 1000;
+  border-top: 2px solid blue; /* Blue border for contrast */
+}
+
+.ticker-container {
+  display: inline-block;
+  animation: scrollTicker 40s linear infinite; /* Slower scrolling animation (40s) */
+}
+
+#news-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#news-list li {
+  display: inline-block;
+  margin-right: 40px; /* Space between news items */
+}
+
+#news-list a {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#news-list a:hover {
+  color: blue; /* Blue text on hover */
+  text-decoration: underline;
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scrollTicker {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
