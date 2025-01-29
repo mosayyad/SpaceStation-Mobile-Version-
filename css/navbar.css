@@ -66,7 +66,7 @@
   }
   
   /* Menu Styles */
-  .menu {
+.menu {
     display: none; /* Hidden by default */
     gap: 10px;
     position: absolute;
@@ -79,19 +79,21 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s; /* Smooth fade-in */
-  }
-  
-  /* Show menu when active */
-  .menu.active {
+    max-height: 70vh; /* Set a maximum height for the menu */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Show menu when active */
+.menu.active {
     display: flex;
     flex-direction: column; /* Stack menu items vertically on mobile */
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0s 0s;
-  }
-  
-  /* Menu link styles */
-  .menu a {
+}
+
+/* Menu link styles */
+.menu a {
     display: flex;
     align-items: center;
     gap: 6px; /* Reduced gap for smaller screens */
@@ -102,75 +104,60 @@
     font-size: 0.9rem; /* Smaller font size for mobile */
     font-weight: 500;
     transition: all 0.3s ease;
-  }
-  
-  /* Menu link hover effect */
-  .menu a:hover {
+}
+
+/* Menu link hover effect */
+.menu a:hover {
     background: rgba(0, 255, 255, 0.2);
     color: #00ffff;
     transform: translateY(-2px); /* Reduced transform for smaller screens */
-  }
-  
-  /* Active link style */
-  #active-page {
+}
+
+/* Active link style */
+#active-page {
     color: #00ffff;
     background: rgba(0, 255, 255, 0.3);
     border: 2px solid #00ffff;
     box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* Reduced shadow for smaller screens */
     font-weight: bold;
     transform: translateY(-2px); /* Reduced transform for smaller screens */
-  }
-  
-  /* Hide menu in a horizontal layout when not active */
-  .menu {
-    display: none;
-  }
-  
-  .menu.active {
-    display: flex;
-    gap: 10px; /* Reduced gap for smaller screens */
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Media Queries for Tablets */
-  @media (max-width: 1024px) {
+}
+
+/* Media Queries for Tablets */
+@media (max-width: 1024px) {
     .logo {
-      font-size: 1.5rem; /* Adjusted font size for tablets */
+        font-size: 1.5rem; /* Adjusted font size for tablets */
     }
-  
+
     .menu-toggle span {
-      width: 26px; /* Adjusted width for tablets */
+        width: 26px; /* Adjusted width for tablets */
     }
-  
+
     .menu {
-      top: 70px; /* Adjusted position for tablets */
+        top: 70px; /* Adjusted position for tablets */
     }
-  
+
     .menu a {
-      font-size: 1rem; /* Adjusted font size for tablets */
+        font-size: 1rem; /* Adjusted font size for tablets */
     }
-  }
-  
-  /* Media Queries for Phones */
-  @media (max-width: 768px) {
+}
+
+/* Media Queries for Phones */
+@media (max-width: 768px) {
     .logo {
-      font-size: 1.3rem; /* Smaller font size for phones */
+        font-size: 1.3rem; /* Smaller font size for phones */
     }
-  
+
     .menu-toggle span {
-      width: 22px; /* Smaller width for phones */
+        width: 22px; /* Smaller width for phones */
     }
-  
+
     .menu {
-      top: 60px; /* Adjusted position for phones */
-      padding: 8px; /* Smaller padding for phones */
+        top: 60px; /* Adjusted position for phones */
+        padding: 8px; /* Smaller padding for phones */
     }
-  
+
     .menu a {
-      font-size: 0.9rem; /* Smaller font size for phones */
+        font-size: 0.9rem; /* Smaller font size for phones */
     }
-  }
+}
