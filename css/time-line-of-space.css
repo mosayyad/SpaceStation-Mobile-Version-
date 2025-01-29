@@ -200,3 +200,71 @@ li {
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Top border */
     font-size: 0.9rem;
 }
+
+/* Media Queries for Tablets */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5em; /* Slightly smaller font size for tablets */
+    }
+
+    .timeline-entry {
+        width: 100%; /* Full width for tablets */
+        padding: 20px 10px; /* Adjusted padding */
+    }
+
+    .timeline-entry.left, .timeline-entry.right {
+        left: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: left; /* Align text to the left for tablets */
+    }
+
+    .entry-card {
+        padding: 1.5rem; /* Adjusted padding */
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted grid for tablets */
+        gap: 20px;
+    }
+}
+
+/* Media Queries for Phones */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2em; /* Smaller font size for phones */
+    }
+
+    .timeline-container {
+        padding: 50px 0; /* Adjusted padding */
+    }
+
+    .timeline-line {
+        left: 20px; /* Move line to the left for phones */
+    }
+
+    .timeline-entry {
+        width: 100%; /* Full width for phones */
+        padding: 20px 10px; /* Adjusted padding */
+    }
+
+    .timeline-entry.left, .timeline-entry.right {
+        left: 0;
+        padding-right: 10px;
+        padding-left: 30px; /* Adjusted padding to accommodate the timeline line */
+        text-align: left; /* Align text to the left for phones */
+    }
+
+    .entry-card {
+        padding: 1rem; /* Adjusted padding */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Single column layout for phones */
+        gap: 10px;
+    }
+
+    .footer-section {
+        text-align: center; /* Center align footer content for phones */
+    }
+}
