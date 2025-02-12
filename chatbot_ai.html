@@ -26,29 +26,55 @@
 <body>
     
   <div class="stars"></div>
+<!-- New Header with Accessibility Controls -->
+<header class="header">
+  <nav class="nav">
+      <a href="index.html" class="logo">🚀Space Station</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <div class="menu" id="menu">
+          <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+          <a href="games.html">Game</a>
+          <a href="chatbot_ai.html" id="active-page">GY-AI</a>
+          <a href="commuinty.html">Community</a>
+          <a href="contact.html">Contact</a>
+          <a href="topics.html">Topics</a>
+          <a href="about.html" >About</a>
+          <a href="vr_beta.html">VR (Beta Version)</a>
+          <a href="Sign_in_up.html">Dashboard</a>
+          <a href="time-line-of-space.html">Timeline</a>
+      </div>
+  </nav>
 
-  <header class="header">
-    <nav class="nav">
-        <a href="index.html" class="logo">🚀Space Station</a>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu" id="menu">
-            <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
-            <a href="games.html">Game</a>
-            <a href="chatbot_ai.html"  id="active-page">GY-AI</a>
-            <a href="commuinty.html">Community</a>
-            <a href="contact.html">Contact</a>
-            <a href="topics.html">Topics</a>
-            <a href="about.html">About</a>
-            <a href="vr_beta.html">VR (Beta Version)</a>
-            <a href="Sign_in_up.html">Dashboard</a>
-            <a href="time-line-of-space.html" >Timeline</a>
+  <!-- Accessibility Controls -->
+  <div id="accessibility-controls-container">
+      <span class="accessibility-heading">Accessibility:</span>
 
-        </div>
-    </nav>
+      <button id="textDecrease" aria-label="Decrease text size">A−</button>
+      <button id="textIncrease" aria-label="Increase text size">A+</button>
+      <button id="textSpeech" aria-label="Read text aloud" title="Speak highlighted text if selected, otherwise read full content">
+          Speak
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+      </button>
+      <button id="textPause" aria-label="Pause text reading">
+          Pause
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="6" y="4" width="3" height="16" fill="currentColor"></rect>
+              <rect x="15" y="4" width="3" height="16" fill="currentColor"></rect>
+          </svg>
+      </button>
+      <button id="textResume" aria-label="Resume text reading">
+          Resume
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21" fill="currentColor"></polygon>
+          </svg>
+      </button>
+  </div>
 </header>
   
   <main class="chat-container">

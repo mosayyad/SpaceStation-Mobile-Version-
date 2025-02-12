@@ -8,52 +8,117 @@
     <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-        <!-- Navigation bar with links to other pages -->
-        <header class="header">
-          <nav class="nav">
-              <a href="index.html" class="logo">🚀Space Station</a>
-              <div class="menu-toggle" onclick="toggleMenu()">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </div>
-              <div class="menu" id="menu">
-                  <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
-                  <a href="games.html">Game</a>
-                  <a href="chatbot_ai.html">GY-AI</a>
-                  <a href="commuinty.html">Community</a>
-                  <a href="contact.html">Contact</a>
-                  <a href="topics.html">Topics</a>
-                  <a href="about.html">About</a>
-                  <a href="vr_beta.html"  id="active-page">VR (Beta Version)</a>
-                  <a href="Sign_in_up.html">Dashboard</a>
-                  <a href="time-line-of-space.html" >Timeline</a>
 
-              </div>
-          </nav>
-      </header>
+
+
+<!-- New Header with Accessibility Controls -->
+<header class="header">
+  <nav class="nav">
+      <a href="index.html" class="logo">🚀Space Station</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <div class="menu" id="menu">
+          <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+          <a href="games.html">Game</a>
+          <a href="chatbot_ai.html">GY-AI</a>
+          <a href="commuinty.html">Community</a>
+          <a href="contact.html">Contact</a>
+          <a href="topics.html">Topics</a>
+          <a href="about.html" >About</a>
+          <a href="vr_beta.html" id="active-page">VR (Beta Version)</a>
+          <a href="Sign_in_up.html">Dashboard</a>
+          <a href="time-line-of-space.html">Timeline</a>
+      </div>
+  </nav>
+
+  <!-- Accessibility Controls -->
+  <div id="accessibility-controls-container">
+      <span class="accessibility-heading">Accessibility:</span>
+
+      <button id="textDecrease" aria-label="Decrease text size">A−</button>
+      <button id="textIncrease" aria-label="Increase text size">A+</button>
+      <button id="textSpeech" aria-label="Read text aloud" title="Speak highlighted text if selected, otherwise read full content">
+          Speak
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+      </button>
+      <button id="textPause" aria-label="Pause text reading">
+          Pause
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="6" y="4" width="3" height="16" fill="currentColor"></rect>
+              <rect x="15" y="4" width="3" height="16" fill="currentColor"></rect>
+          </svg>
+      </button>
+      <button id="textResume" aria-label="Resume text reading">
+          Resume
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21" fill="currentColor"></polygon>
+          </svg>
+      </button>
+  </div>
+</header>
+
+    <!-- Accessibility Controls -->
+    <div id="accessibility-controls-container">
+        <span class="accessibility-heading">Accessibility:</span>
+
+        <button id="textDecrease" aria-label="Decrease text size">A−</button>
+        <button id="textIncrease" aria-label="Increase text size">A+</button>
+        <button id="textSpeech" aria-label="Read text aloud" title="Speak highlighted text if selected, otherwise read full content">
+            Speak
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+        </button>
+        <button id="textPause" aria-label="Pause text reading">
+            Pause
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="4" width="3" height="16" fill="currentColor"></rect>
+                <rect x="15" y="4" width="3" height="16" fill="currentColor"></rect>
+            </svg>
+        </button>
+        <button id="textResume" aria-label="Resume text reading">
+            Resume
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="5,3 19,12 5,21" fill="currentColor"></polygon>
+            </svg>
+        </button>
+    </div>
+</header>
+
+
+  
     <div class="tabs">
         <div class="tab" onclick="showTabContent('vr-info')">VR Information</div>
         <div class="tab" onclick="showTabContent('supported-devices')">Supported Devices</div>
         <div class="tab" onclick="showTabContent('future-plans')">Future Plans</div>
     </div>
     <div id="vr-info" class="tab-content">
-        <h2>VR Videos Info</h2>
-        <h3>VR Videos About Space</h3>
-        <div class="video-grid">
-            <p>Virtual Reality 1</p>
-            <div class="video-item">
-            <iframe src="vid/Vr/1.mp4" frameborder="0" allowfullscreen width="560" height="315"></iframe>
-            
-            </div>
-
-            <p>Virtual Reality 2</p>
-            <div class="video-item">
-            <iframe src="vid/Vr/2.mp4"  frameborder="0" allowfullscreen width="560" height="315"></iframe>
-            
-            </div>
+      <h2>VR Videos Info</h2>
+      <h3>VR Videos About Space</h3>
+      <div class="video-grid">
+        <div class="video-item">
+          <p>Virtual Reality 1</p>
+          <video controls>
+            <source src="vid/Vr/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
+        <div class="video-item">
+          <p>Virtual Reality 2</p>
+          <video controls>
+            <source src="vid/Vr/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
+  
+  
     <div id="supported-devices" class="tab-content">
         <h2>Supported Devices</h2>
         <p>Here you can find a list of devices that support virtual reality technology:</p>
@@ -123,24 +188,21 @@
             <li>Optional: VR controllers for enhanced interaction and navigation within the VR environment.</li>
         </ul>
 
-        <style>
-
-        </style>
     </div>
     <div id="future-plans" class="tab-content">
-        <h2>Future Plans</h2>
-        <p>Here you can find future plans for the development of virtual reality technology.</p>
-        <h3>Future Plans for VR Development</h3>
-        <p>We are excited to announce our future plans for developing VR experiences that will enhance learning about space and beyond. Our goals include:</p>
-        <ul>
-            <li>Creating immersive VR simulations of space missions and celestial events.</li>
-            <li>Developing interactive VR lessons and tutorials about astronomy and space science.</li>
-            <li>Collaborating with educational institutions to integrate VR into their curriculum.</li>
-            <li>Expanding our VR content library with more high-quality videos and experiences.</li>
-            <li>Improving VR accessibility and compatibility with a wider range of devices.</li>
-            <li>Exploring the use of augmented reality (AR) to complement VR experiences.</li>
-        </ul>
-        <p>Stay tuned for more updates as we continue to innovate and bring the wonders of space closer to you through virtual reality.</p>
+      <h2>Future Plans</h2>
+      <p>Here you can find future plans for the development of virtual reality technology.</p>
+      <h3>Future Plans for VR Development</h3>
+      <p>We are excited to announce our future plans for developing VR experiences that will enhance learning about space and beyond. Our goals include:</p>
+      <ul>
+        <li>Creating immersive VR simulations of space missions and celestial events.</li>
+        <li>Developing interactive VR lessons and tutorials about astronomy and space science.</li>
+        <li>Collaborating with educational institutions to integrate VR into their curriculum.</li>
+        <li>Expanding our VR content library with more high-quality videos and experiences.</li>
+        <li>Improving VR accessibility and compatibility with a wider range of devices.</li>
+        <li>Exploring the use of augmented reality (AR) to complement VR experiences.</li>
+      </ul>
+      <p>Stay tuned for more updates as we continue to innovate and bring the wonders of space closer to you through virtual reality.</p>
     </div>
 
     <footer class="footer">
