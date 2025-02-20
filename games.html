@@ -4,62 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Game</title>
-    <link rel="stylesheet" href="css/games.css">
-    <link rel="stylesheet" href="css/navbar.css">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Google Fonts -->
+      <link id="google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <!-- Custom CSS Files -->
+      <link rel="stylesheet" href="css/games.css">
+       <link rel="stylesheet" href="css/navbar.css">
 
 </head>
-<body>
-   <!-- New Header with Accessibility Controls -->
-<header class="header">
-    <nav class="nav">
-        <a href="index.html" class="logo">🚀Space Station</a>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu" id="menu">
-            <a href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
-            <a href="games.html" id="active-page">Game</a>
-            <a href="chatbot_ai.html">GY-AI</a>
-            <a href="commuinty.html">Community</a>
-            <a href="contact.html">Contact</a>
-            <a href="topics.html">Topics</a>
-            <a href="about.html" >About</a>
-            <a href="vr_beta.html">VR (Beta Version)</a>
-            <a href="Sign_in_up.html">Dashboard</a>
-            <a href="time-line-of-space.html">Timeline</a>
-        </div>
-    </nav>
+<body style="color: #ffffff;">
 
-    <!-- Accessibility Controls -->
-    <div id="accessibility-controls-container">
-        <span class="accessibility-heading">Accessibility:</span>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <div class="brand-container">
+                  <span class="brand-text">SpaceStation</span>
+                </div>
+              </a>
+              <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="vr-beta.html">VR (Beta)</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="community.html">Community</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="support.html">Support</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="timeline-of-space.html">Time-line</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="topics.html">Topics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="space-ai.html">Space Ai</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">dashboard</a>
+                  </li>
+            <!-- Accessibility Tools -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                  <i class="fas fa-universal-access"></i> Accessibility
+                </a>
+                <div class="dropdown-menu dropdown-menu-end accessibility-menu">
+                  <div class="accessibility-controls">
 
-        <button id="textDecrease" aria-label="Decrease text size">A−</button>
-        <button id="textIncrease" aria-label="Increase text size">A+</button>
-        <button id="textSpeech" aria-label="Read text aloud" title="Speak highlighted text if selected, otherwise read full content">
-            Speak
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-        </button>
-        <button id="textPause" aria-label="Pause text reading">
-            Pause
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="6" y="4" width="3" height="16" fill="currentColor"></rect>
-                <rect x="15" y="4" width="3" height="16" fill="currentColor"></rect>
-            </svg>
-        </button>
-        <button id="textResume" aria-label="Resume text reading">
-            Resume
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <polygon points="5,3 19,12 5,21" fill="currentColor"></polygon>
-            </svg>
-        </button>
-    </div>
-</header>
-        
+                    <button class="access-btn" id="textDecrease">
+                      <i class="fas fa-minus"></i> Decrease Font
+                    </button>
+                    <button class="access-btn" id="textIncrease">
+                      <i class="fas fa-plus"></i> Increase Font
+                    </button>
+
+                    <button class="access-btn" id="textSpeech">
+                      <i class="fas fa-volume-up"></i> Text-to-Speech
+                    </button>
+                    <button class="access-btn" id="textPause">
+                      <i class="fas fa-pause"></i> Pause Speech
+                    </button>
+                    <button class="access-btn" id="textResume">
+                      <i class="fas fa-play"></i> Resume Speech
+                    </button>
+                  </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
             <h1>Select a Game</h1>
             <div class="game-container">
                 <button class="game-button" id="game1">
@@ -107,7 +136,17 @@
                 Fullscreen
             </button>
         
-            <script src="js/games.js"></script>
-            <script src="js/navbar.js"></script>
+  <!-- Footer -->
+  <footer class="footer py-4" style="background: linear-gradient(45deg, #343a40, #23272b); color: #ffffff; text-align: center; box-shadow: 0px -2px 10px rgba(0,0,0,0.5); padding: 20px 0; font-family: 'Cairo', sans-serif;">
+    <p class="mt-3" style="margin-bottom: 0;">All Rights Reserved © 2024 Galaxy Youth</p>
+    <p class="small" style="font-size: 0.9rem; margin-top: 5px;">Designed with care & quality standards.</p>
+  </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <!--Custom Scripts-->
+  <script src="js/accessibility.js"></script>
+  <script src="js/games.js"></script>
 </body>
 </html>

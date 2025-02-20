@@ -1,125 +1,164 @@
-/* General header styles */
-.header {
-  padding: 10px;
-  position: fixed;
+/* Navbar Styles */
+.navbar {
+  background: rgba(30, 40, 56, 0.9); /* خلفية داكنة مع تأثير تمويه خفيف */
+  backdrop-filter: blur(12px); /* تحسين التمويه للخلفية */
+  transition: all 0.3s ease;
+  left: 0;
   width: 100%;
-  top: 0;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 20px rgba(0, 255, 255, 0.15);
-  z-index: 100;
-  transition: all 0.3s ease;
-  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* إضافة ظل ناعم للشريط */
 }
 
-.nav {
+/* شعار navbar */
+.navbar-brand {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 100%;
-  margin: auto;
-  padding: 0 10px;
-  box-sizing: border-box;
+  gap: 0.5rem;
 }
 
-/* Logo styles */
-.logo {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-  transition: all 0.3s ease;
-}
-
-.logo:hover {
-  color: #00ffff;
-  transform: scale(1.05);
-}
-
-/* Menu Toggle (Hamburger Icon) */
-.menu-toggle {
+/* تصميم الشعار */
+.brand-container {
   display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.menu-toggle span {
-  height: 2.5px;
-  width: 24px;
-  background: #fff;
-  border-radius: 2px;
+
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff; /* جعل النص أبيض */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* تباعد أكبر بين الحروف */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* إضافة تأثير الظل للنص */
+}
+
+/* Navigation Links */
+.nav-link {
+  color: rgba(255, 255, 255, 0.85); /* لون النص مع شفافية خفيفة */
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px; /* جعل الروابط دائرية أكثر */
   transition: all 0.3s ease;
+  font-size: 1.1rem;
 }
 
-/* Menu Styles */
-.menu {
-  display: none;
-  gap: 10px;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 10px;
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(130, 177, 255, 0.3); /* تغيير اللون عند التمرير */
+  transform: translateY(-5px); /* رفع الرابط عند التمرير */
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+  background: rgba(24, 34, 50, 0.95); /* خلفية داكنة للقائمة المنسدلة */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s 0.3s;
-  max-height: 70vh;
-  overflow-y: auto;
 }
 
-/* Show menu when active */
-.menu.active {
-  display: flex;
-  flex-direction: column;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0s 0s;
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.75rem 1.25rem;
+  transition: all 0.2s ease;
 }
 
-/* Menu link styles */
-.menu a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateX(5px); /* تحريك العنصر عند التمرير */
+}
+
+/* Accessibility Menu */
+.accessibility-menu {
+  min-width: 220px;
+}
+
+.accessibility-controls {
+  padding: 0.5rem;
+}
+
+.access-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.access-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Toggler */
+.custom-toggler {
+  border: none;
+  padding: 0.25rem;
+}
+
+.toggler-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  position: relative;
   transition: all 0.3s ease;
 }
 
-/* Active link style */
-#active-page {
-  color: #00ffff;
-  background: rgba(0, 255, 255, 0.3);
-  border: 2px solid #00ffff;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-  font-weight: bold;
-  transform: translateY(-2px);
+.toggler-icon::before,
+.toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.3s ease;
 }
 
-/* Accessibility Controls Styles */
-#accessibility-controls-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+.toggler-icon::before {
+  transform: translateY(-10px);
 }
 
-#accessibility-controls-container button {
-  background: transparent;
+.toggler-icon::after {
+  transform: translateY(10px);
+}
+
+/* Animations */
+.animate {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slideIn {
+  animation-name: slideIn;
+}
+
+/* Large Font for Better Readability */
+.large-font {
+  font-size: 1.2rem;
+}
+
+/* Mode Styles */
+.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.high-contrast {
+  background-color: #000;
   color: #fff;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#accessibility-controls-container button:hover {
-  color: #00ffff;
 }

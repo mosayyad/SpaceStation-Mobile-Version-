@@ -1,0 +1,198 @@
+/* Root Variables for Comfortable Space Theme */
+:root {
+  --primary-bg: #0a192f; /* Deep navy blue */
+  --secondary-bg: #112240; /* Slightly lighter navy */
+  --text-color: #ccd6f6; /* Soft white for text */
+  --accent-color: #64ffda; /* Teal for accents */
+  --hover-color: #52d1b2; /* Slightly darker teal for hover */
+  --light-transition: 0.3s; /* Smooth transitions */
+  --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  --font-family: 'Cairo', sans-serif; /* Google Font */
+  --space-gradient: linear-gradient(45deg, #0a192f, #112240); /* Space gradient */
+}
+
+/* Global Body Style */
+body {
+  background: var(--space-gradient);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for Sign In/Up Section */
+.sign-in-up {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  animation: fadeIn 0.8s ease-in;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.sign-in-up h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.tab-link {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: background var(--light-transition), color var(--light-transition);
+}
+
+.tab-link:hover {
+  background: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+.tab-link.active {
+  background: var(--accent-color);
+  color: var(--primary-bg);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Form Containers */
+.form-container {
+  display: none;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.form-container.active {
+  display: block;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* Input Fields */
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  transition: border var(--light-transition), box-shadow var(--light-transition);
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+/* Buttons */
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--light-transition), transform 0.2s, box-shadow 0.2s;
+}
+
+/* Primary submit button */
+form button[type="submit"] {
+  background: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+form button[type="submit"]:hover {
+  transform: scale(1.02);
+  background: var(--hover-color);
+  box-shadow: 0 4px 8px rgba(100, 255, 218, 0.4);
+}
+
+/* Secondary buttons (social sign-ins) */
+form button[type="button"] {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
+
+form button[type="button"]:hover {
+  transform: scale(1.02);
+  background: var(--accent-color);
+  color: var(--primary-bg);
+  box-shadow: 0 4px 8px rgba(100, 255, 218, 0.4);
+}
+
+/* Styling for Error/Status Message */
+#message {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  background: var(--accent-color);
+  color: var(--primary-bg);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Extra Touch for Social Buttons (Google & GitHub) */
+#google-sign-in,
+#github-sign-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Hover effect for social buttons */
+#google-sign-in:hover,
+#github-sign-in:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .sign-in-up {
+    margin: 20px;
+    padding: 20px;
+  }
+  .tab-link {
+    font-size: 0.9rem;
+  }
+  form button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
