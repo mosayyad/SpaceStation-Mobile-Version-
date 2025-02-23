@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Space Station</title>
   <link rel="icon" href="images/team_logo/Galaxy_Youth.png">
-      <!-- Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Google Fonts -->
-      <link id="google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap">
-      <!-- Font Awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <!-- Custom CSS Files -->
-      <link rel="stylesheet" href="css/index.css">
-       <link rel="stylesheet" href="css/navbar.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link id="google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Custom CSS Files -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body class="light-mode" data-theme="light" data-font="Cairo">
 
@@ -23,84 +23,87 @@
     </video>
   </div>
   
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <div class="brand-container">
-            <span class="brand-text">SpaceStation</span>
-          </div>
-        </a>
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="nasa-eye-exolpanets.html">Planet Exoplanet</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="games.html">Game</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="vr-beta.html">VR (Beta)</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="community.html">Community</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="support.html">Support</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="timeline-of-space.html">Time-line</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="topics.html">Topics</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="space-ai.html">Space Ai</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">dashboard</a>
-            </li>
-            <!-- Accessibility Tools -->
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" data-bs-toggle="dropdown">
-                <i class="fas fa-universal-access"></i> Accessibility
-              </a>
-              <div class="dropdown-menu dropdown-menu-end accessibility-menu">
-                <div class="accessibility-controls">
-                  <button class="access-btn" id="textDecrease">
-                    <i class="fas fa-minus"></i> Decrease Font
-                  </button>
-                  <button class="access-btn" id="textIncrease">
-                    <i class="fas fa-plus"></i> Increase Font
-                  </button>
-
-                  <button class="access-btn" id="textSpeech">
-                    <i class="fas fa-volume-up"></i> Text-to-Speech
-                  </button>
-                  <button class="access-btn" id="textPause">
-                    <i class="fas fa-pause"></i> Pause Speech
-                  </button>
-                  <button class="access-btn" id="textResume">
-                    <i class="fas fa-play"></i> Resume Speech
-                  </button>
-                </div>
-              </div>
-            </li>
-          </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-container">
+          <span class="brand-text" id="brand-text">SpaceStation</span>
         </div>
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="nasa-eye-exolpanets.html" id="nav-planet-exoplanet">Planet Exoplanet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html" id="nav-game">Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="vr-beta.html" id="nav-vr-beta">VR (Beta)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="community.html" id="nav-community">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="support.html" id="nav-support">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="timeline-of-space.html" id="nav-timeline">Time-line</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" id="nav-about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topics.html" id="nav-topics">Topics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="space-ai.html" id="nav-space-ai">Space Ai</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html" id="nav-dashboard">dashboard</a>
+          </li>
+          <!-- Accessibility Tools -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-universal-access"></i> Accessibility
+            </a>
+            <div class="dropdown-menu dropdown-menu-end accessibility-menu">
+              <div class="accessibility-controls">
+                <button class="access-btn" id="textDecrease">
+                  <i class="fas fa-minus"></i> Decrease Font
+                </button>
+                <button class="access-btn" id="textIncrease">
+                  <i class="fas fa-plus"></i> Increase Font
+                </button>
+
+                <button class="access-btn" id="textSpeech">
+                  <i class="fas fa-volume-up"></i> Text-to-Speech
+                </button>
+                <button class="access-btn" id="textPause">
+                  <i class="fas fa-pause"></i> Pause Speech
+                </button>
+                <button class="access-btn" id="textResume">
+                  <i class="fas fa-play"></i> Resume Speech
+                </button>
+                <button class="access-btn" id="translateArabic">
+                  <i class="fas fa-language"></i> Translate to Arabic
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
   <section class="hero">
     <div class="hero-content">
-      <h1>Discover the Secrets of the Universe</h1>
-      <p>An enjoyable educational journey in the world of space for all ages</p>
-      <a href="topics.html" class="cta-button">Start Your Journey Now</a>
+      <h1 id="hero-title">Discover the Secrets of the Universe</h1>
+      <p id="hero-description">An enjoyable educational journey in the world of space for all ages</p>
+      <a href="topics.html" class="cta-button" id="cta-button">Start Your Journey Now</a>
     </div>
   </section>
   
@@ -108,35 +111,67 @@
     <div class="features">
       <div class="feature-card">
         <div class="feature-icon">🌍</div>
-        <h3>Exploring Planets</h3>
-        <p>Learn about the planets of our solar system and their unique characteristics</p>
+        <h3 id="feature-title-1">Exploring Planets</h3>
+        <p id="feature-description-1">Learn about the planets of our solar system and their unique characteristics</p>
       </div>
       
       <div class="feature-card">
         <div class="feature-icon">⭐</div>
-        <h3>Star Science</h3>
-        <p>Discover the secrets of stars and distant galaxies</p>
+        <h3 id="feature-title-2">Star Science</h3>
+        <p id="feature-description-2">Discover the secrets of stars and distant galaxies</p>
       </div>
       
       <div class="feature-card">
         <div class="feature-icon">👨‍🚀</div>
-        <h3>Space Explorers</h3>
-        <p>Learn about the lives of astronauts and their exciting adventures</p>
+        <h3 id="feature-title-3">Space Explorers</h3>
+        <p id="feature-description-3">Learn about the lives of astronauts and their exciting adventures</p>
       </div>
+    </div>
+    
+    <!-- News Widget -->
+    <div class="news-widget">
+      <h2 id="news-title">Latest Space News</h2>
+      <rssapp-imageboard id="StR0iw6X2O8Glu8R"></rssapp-imageboard><script src="https://widget.rss.app/v1/imageboard.js" type="text/javascript" async></script>
     </div>
   </main>
   
   <!-- Footer -->
   <footer class="footer py-4" style="background: linear-gradient(45deg, #343a40, #23272b); color: #ffffff; text-align: center; box-shadow: 0px -2px 10px rgba(0,0,0,0.5); padding: 20px 0; font-family: 'Cairo', sans-serif;">
-    <p class="mt-3" style="margin-bottom: 0;">All Rights Reserved © 2024 Galaxy Youth</p>
-    <p class="small" style="font-size: 0.9rem; margin-top: 5px;">Designed with care & quality standards.</p>
+    <p class="mt-3" style="margin-bottom: 0;" id="footer-text">All Rights Reserved © 2024 Galaxy Youth</p>
+    <p class="small" style="font-size: 0.9rem; margin-top: 5px;" id="footer-subtext">Designed with care & quality standards.</p>
   </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  <!--Custom Scripts-->
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <!-- Custom Scripts -->
   <script src="js/accessibility.js"></script>
-
+  <script>
+    document.getElementById('translateArabic').addEventListener('click', function() {
+      document.getElementById('brand-text').textContent = 'محطة الفضاء';
+      document.getElementById('nav-planet-exoplanet').textContent = 'كوكب خارج المجموعة الشمسية';
+      document.getElementById('nav-game').textContent = 'لعبة';
+      document.getElementById('nav-vr-beta').textContent = 'الواقع الافتراضي (بيتا)';
+      document.getElementById('nav-community').textContent = 'مجتمع';
+      document.getElementById('nav-support').textContent = 'الدعم';
+      document.getElementById('nav-timeline').textContent = 'الجدول الزمني';
+      document.getElementById('nav-about').textContent = 'حول';
+      document.getElementById('nav-topics').textContent = 'المواضيع';
+      document.getElementById('nav-space-ai').textContent = 'الذكاء الاصطناعي الفضائي';
+      document.getElementById('nav-dashboard').textContent = 'لوحة القيادة';
+      document.getElementById('hero-title').textContent = 'اكتشف أسرار الكون';
+      document.getElementById('hero-description').textContent = 'رحلة تعليمية ممتعة في عالم الفضاء لجميع الأعمار';
+      document.getElementById('cta-button').textContent = 'ابدأ رحلتك الآن';
+      document.getElementById('feature-title-1').textContent = 'استكشاف الكواكب';
+      document.getElementById('feature-description-1').textContent = 'تعرف على كواكب نظامنا الشمسي وخصائصها الفريدة';
+      document.getElementById('feature-title-2').textContent = 'علم النجوم';
+      document.getElementById('feature-description-2').textContent = 'اكتشف أسرار النجوم والمجرات البعيدة';
+      document.getElementById('feature-title-3').textContent = 'مستكشفو الفضاء';
+      document.getElementById('feature-description-3').textContent = 'تعرف على حياة رواد الفضاء ومغامراتهم المثيرة';
+      document.getElementById('news-title').textContent = 'أحدث أخبار الفضاء';
+      document.getElementById('footer-text').textContent = 'جميع الحقوق محفوظة © 2024 Galaxy Youth';
+      document.getElementById('footer-subtext').textContent = 'مصمم بعناية ومعايير الجودة.';
+    });
+  </script>
 </body>
 </html>
